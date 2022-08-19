@@ -8,4 +8,6 @@ class Transaction {
         this.amount = amount;
     }
 }
-module.exports = Transaction;
+exports.default = Transaction;
+// module.exports = Transaction
+// export{}

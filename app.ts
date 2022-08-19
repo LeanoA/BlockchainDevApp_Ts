@@ -1,7 +1,7 @@
-const Block = require('./block')
-const Blockchain = require('./blockchain')
-const Transaction = require('./transaction')
-const BlockchainNodes = require('./blockchainNode')
+import Block from './block'
+import Blockchain from './blockchain'
+import Transaction from './transaction'
+import BlockchainNodes from './blockchainNode'
 
 //const fetch = require('node-fetch')
 import fetch from 'node-fetch';
@@ -14,24 +14,23 @@ import argv from "process.argv";
 
 //const arguments = process.argv
 
-console.log("its work1")
 //console.log(process.argv)
 
 const processArgv = process.argv;
 let PORT:number = 8080
 
-console.log("its work2")
+
 
 if (processArgv.length >2) {
     PORT = parseInt(processArgv[2])
 }
 
 // body Parser for JSON
-app.use(express.json())
+app.use(express.json());
 
-let transactions = []
-const nodes = []
-const allTransactions = []
+let transactions: Transaction[] = [];
+const nodes: BlockchainNodes[] = [];
+const allTransactions: Transaction[] = [];
 
 const genesisBlock = new Block()
 let blockchain = new Blockchain(genesisBlock)

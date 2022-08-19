@@ -13,7 +13,8 @@
     "express": "^4.18.1",
     "js-sha256": "^0.9.0",
     "node-fetch": "^2.6.7",
-    "process.argv": "^0.6.0"
+    "process.argv": "^0.6.0",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",

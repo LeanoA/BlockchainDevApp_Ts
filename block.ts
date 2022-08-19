@@ -1,11 +1,11 @@
-const Transaction = require('./transaction')
+import Transaction from './transaction'
 
-class Block {
-  index: Number;
+export default class Block {
+  index: number;
   previousHash : String;
   hash : String;
-  nonce : Number;
-  transactions : typeof Transaction[];
+  nonce : number;
+  transactions : Transaction[];
 
     constructor(){
         this.index = 0
@@ -19,10 +19,10 @@ class Block {
         return JSON.stringify(this.transactions ) + this.index + this.previousHash + this.nonce
     }
 
-    addTransaction(transaction) {
+    addTransaction(transaction:Transaction) {
         this.transactions.push(transaction)
     }
 }
 
-module.exports = Block
-export{}
+// module.exports = Block
+// export{}

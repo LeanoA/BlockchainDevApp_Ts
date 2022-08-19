@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Transaction = require('./transaction');
 class Block {
     constructor() {
         this.index = 0;
@@ -16,4 +15,6 @@ class Block {
         this.transactions.push(transaction);
     }
 }
-module.exports = Block;
+exports.default = Block;
+// module.exports = Block
+// export{}

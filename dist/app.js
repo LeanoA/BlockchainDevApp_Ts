@@ -1,19 +1,17 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Block = require('./block');
-const Blockchain = require('./blockchain');
-const Transaction = require('./transaction');
-const BlockchainNodes = require('./blockchainNode');
+const block_1 = require("./block");
+const blockchain_1 = require("./blockchain");
+const transaction_1 = require("./transaction");
+const blockchainNode_1 = require("./blockchainNode");
 //const fetch = require('node-fetch')
 const node_fetch_1 = require("node-fetch");
 const express = require('express');
 const app = express();
 //const arguments = process.argv
-console.log("its work1");
 //console.log(process.argv)
 const processArgv = process.argv;
 let PORT = 8080;
-console.log("its work2");
 if (processArgv.length > 2) {
     PORT = parseInt(processArgv[2]);
 }
@@ -22,8 +20,8 @@ app.use(express.json());
 let transactions = [];
 const nodes = [];
 const allTransactions = [];
-const genesisBlock = new Block();
-let blockchain = new Blockchain(genesisBlock);
+const genesisBlock = new block_1.default();
+let blockchain = new blockchain_1.default(genesisBlock);
 app.get('/resolve', (req, res) => {
     // Resolve conflicts between nodes
     nodes.forEach(node => {
@@ -69,7 +67,7 @@ app.post('/nodes/register', (req, res) => {
     const urls = req.body;
     urls.forEach(url => {
         // console.log(url)
-        const node = new BlockchainNodes(url);
+        const node = new blockchainNode_1.default(url);
         nodes.push(node);
     });
     res.json(nodes);
@@ -78,7 +76,7 @@ app.post('/transactions', (req, res) => {
     const to = req.body.to;
     const from = req.body.from;
     const amount = req.body.amount;
-    const transaction = new Transaction(from, to, amount);
+    const transaction = new transaction_1.default(from, to, amount);
     transactions.push(transaction);
     res.json(transactions);
 });

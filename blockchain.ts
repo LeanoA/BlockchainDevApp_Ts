@@ -1,15 +1,16 @@
 const sha256 = require('js-sha256')
-const Block = require('./block')
+import Block from './block';
+import Transaction from './transaction'
 
-class Blockchain {
-  blocks: typeof Block[];
+export default class Blockchain {
+  blocks: Block[];
 
-  constructor (genesisBlock) {
+  constructor (genesisBlock: Block) {
       this.blocks =  []
       this.addBlock(genesisBlock)
   }
 
-  addBlock(block){
+  addBlock(block: Block){
       if(this.blocks.length == 0) {
           block.previousHash = "0000000000000000" // 16 ceros va a ser el Hash Previo
           block.hash = this.generateHash(block)
@@ -18,7 +19,7 @@ class Blockchain {
       this.blocks.push(block)
   }
 
-  getNextBlock(transaccions) {
+  getNextBlock(transaccions: Transaction[]) {
       // Creo el nuevo bloque
       const block = new Block()
       transaccions.forEach( (transaccion) => {
@@ -43,7 +44,7 @@ class Blockchain {
       return this.blocks[ this.blocks.length -1 ]
   }
 
-  generateHash(block) {
+  generateHash(block: Block) {
       let hash = sha256(block.key)
 
       // Pedimos que comience con 4 ceros
@@ -58,5 +59,5 @@ class Blockchain {
   }
 }
 
-module.exports = Blockchain
-export{}
+// module.exports = Blockchain
+// export{}

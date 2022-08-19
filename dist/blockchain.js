@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const sha256 = require('js-sha256');
-const Block = require('./block');
+const block_1 = require("./block");
 class Blockchain {
     constructor(genesisBlock) {
         this.blocks = [];
@@ -16,7 +16,7 @@ class Blockchain {
     }
     getNextBlock(transaccions) {
         // Creo el nuevo bloque
-        const block = new Block();
+        const block = new block_1.default();
         transaccions.forEach((transaccion) => {
             block.addTransaction(transaccion);
         });
@@ -44,4 +44,6 @@ class Blockchain {
         return hash;
     }
 }
-module.exports = Blockchain;
+exports.default = Blockchain;
+// module.exports = Blockchain
+// export{}

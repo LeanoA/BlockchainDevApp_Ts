@@ -11,15 +11,29 @@ npm install
 
 To build in `dist` folder
 ```bash
+npm run build 
+```
+
+```bash
 tsc 
 ```
 
-To execute the application
+To execute the application:
+
+```bash
+npm run start 
+```
+or
+
 ```bash
 ts-node ./dist/app.js 
 ```
 
 The server runs on port 8080 by default. To run in diferents server in diferents port put its number in the argument:
+```bash
+npm run start 8081
+```
+or
 
 ```bash
 tsc ./dist/app.js 8081

@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class BlockchainNode {
     // localhost:8080
     // localhost:8081
@@ -5,4 +7,5 @@ class BlockchainNode {
         this.url = url;
     }
 }
-module.exports = BlockchainNode;
+exports.default = BlockchainNode;
+//module.exports = BlockchainNode

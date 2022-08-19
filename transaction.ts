@@ -1,8 +1,8 @@
-class Transaction {
+export default class Transaction {
   from : String;
   to : String;
   amount: Number;
-  constructor(from, to, amount){
+  constructor(from : String, to: String, amount: Number){
       // Contructor de clase Transaction
       this.from = from
       this.to = to
@@ -10,5 +10,5 @@ class Transaction {
   }
 }
 
-module.exports = Transaction
-export{}
+// module.exports = Transaction
+// export{}
