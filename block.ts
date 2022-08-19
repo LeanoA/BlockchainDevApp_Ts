@@ -1,5 +1,12 @@
+const Transaction = require('./transaction')
+
 class Block {
-    
+  index: Number;
+  previousHash : String;
+  hash : String;
+  nonce : Number;
+  transactions : typeof Transaction[];
+
     constructor(){
         this.index = 0
         this.previousHash = ""
@@ -18,3 +25,4 @@ class Block {
 }
 
 module.exports = Block
+export{}

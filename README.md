@@ -7,13 +7,22 @@ It use sha256 to generate a particular hash that start with four zeros.
 
 ```bash
 npm install
-npm app.js
+```
+
+To build in `dist` folder
+```bash
+tsc 
+```
+
+To execute the application
+```bash
+ts-node ./dist/app.js 
 ```
 
 The server runs on port 8080 by default. To run in diferents server in diferents port put its number in the argument:
 
 ```bash
-npm app.js 8081
+tsc ./dist/app.js 8081
 ```
 
 where the port are going to be 8081.

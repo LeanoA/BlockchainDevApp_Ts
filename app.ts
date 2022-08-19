@@ -3,18 +3,27 @@ const Blockchain = require('./blockchain')
 const Transaction = require('./transaction')
 const BlockchainNodes = require('./blockchainNode')
 
-const fetch = require('node-fetch')
+//const fetch = require('node-fetch')
+import fetch from 'node-fetch';
 
 const express = require('express')
 const app = express()
 
 // console.log(process.argv)
-// eslint-disable-next-line no-shadow-restricted-names
-const arguments = process.argv
-let PORT = 8080
+import argv from "process.argv";
 
-if (arguments.length >2) {
-    PORT = arguments[2]
+//const arguments = process.argv
+
+console.log("its work1")
+//console.log(process.argv)
+
+const processArgv = process.argv;
+let PORT:number = 8080
+
+console.log("its work2")
+
+if (processArgv.length >2) {
+    PORT = parseInt(processArgv[2])
 }
 
 // body Parser for JSON

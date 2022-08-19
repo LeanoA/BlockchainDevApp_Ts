@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "moduleResolution":"node",
+    "module": "commonjs",
+    "allowJs": true,
+    "target": "es6"
+  },
+  "include": [
+    "app.ts",
+    "block.ts",
+    "blockchain.ts",
+    "blockchainNode.ts",
+    "transaction.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
